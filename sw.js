@@ -1,5 +1,5 @@
-const C='att-v1';
-const PRE=['./','./index.html','https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'];
+const C='att-v2';
+const PRE=['./','./index.html','https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>Promise.all(PRE.map(u=>c.add(u).catch(()=>{})))))});
 self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
 // يرجّع النسخة المحفوظة فورًا (شغّال بدون نت) ويحدّثها في الخلفية لو فيه نت
